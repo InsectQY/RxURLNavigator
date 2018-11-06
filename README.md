@@ -79,10 +79,15 @@ Also you can  use subscribe
 
 RxURLNavigator officially supports CocoaPods only.
 
-**Podfile**
+#### Podfile
 
 ```ruby
 pod 'RxURLNavigator'
+```
+
+## Import
+```swift
+import RxURLNavigator
 ```
 
 ## Example
