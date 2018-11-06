@@ -1,0 +1,6 @@
+framework module Pods_RxURLNavigator_Example {
+  umbrella header "Pods-RxURLNavigator_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

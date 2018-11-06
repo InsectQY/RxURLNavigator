@@ -1,0 +1,6 @@
+framework module RxURLNavigator {
+  umbrella header "RxURLNavigator-umbrella.h"
+
+  export *
+  module * { export * }
+}
