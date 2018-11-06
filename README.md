@@ -1,8 +1,7 @@
 # RxURLNavigator
 ![Swift](https://img.shields.io/badge/Swift-4.2-orange.svg)
-[![CocoaPods](http://img.shields.io/cocoapods/v/URLNavigator.svg)](https://cocoapods.org/pods/URLNavigator)
 
-RxURLNavigator provides RxSwift extension for [URLNavigator]([GitHub - devxoul/URLNavigator: ⛵️ Elegant URL Routing for Swift](https://github.com/devxoul/URLNavigator))
+RxURLNavigator provides RxSwift extension for [URLNavigator](https://github.com/devxoul/URLNavigator)
 
 ## Getting Started
 If you want to push or present view controllers you should map to  `URLNavigatorPushWrap` or `URLNavigatorPresentWrap `  
@@ -79,7 +78,7 @@ pod 'RxURLNavigator'
 
 ## ## Example
 
-You can find an example app 
+You can find an example app [here](https://github.com/InsectQY/RxURLNavigator/tree/master/Example)
 
 ## License
 RxURLNavigator is available under the MIT license. See the LICENSE file for more info.
