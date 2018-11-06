@@ -1,6 +1,9 @@
 # RxURLNavigator
 ![Swift](https://img.shields.io/badge/Swift-4.2-orange.svg)
 [![Version](https://img.shields.io/cocoapods/v/RxURLNavigator.svg?style=flat)](https://cocoapods.org/pods/RxURLNavigator)
+[![License](https://img.shields.io/cocoapods/l/RxURLNavigator.svg?style=flat)](https://cocoapods.org/pods/RxURLNavigator)
+[![Platform](https://img.shields.io/cocoapods/p/RxURLNavigator.svg?style=flat)](https://cocoapods.org/pods/RxURLNavigator)
+
 
 RxURLNavigator provides RxSwift extension for [URLNavigator](https://github.com/devxoul/URLNavigator)
 
