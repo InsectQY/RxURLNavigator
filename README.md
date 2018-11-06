@@ -1,7 +1,13 @@
 # RxURLNavigator
 ![Swift](https://img.shields.io/badge/Swift-4.2-orange.svg)
+[![Version](https://img.shields.io/cocoapods/v/RxURLNavigator.svg?style=flat)](https://cocoapods.org/pods/RxURLNavigator)
 
 RxURLNavigator provides RxSwift extension for [URLNavigator](https://github.com/devxoul/URLNavigator)
+
+## Requirements
+
+* iOS 8.0+
+* Swift 4
 
 ## Getting Started
 If you want to push or present view controllers you should map to  `URLNavigatorPushWrap` or `URLNavigatorPresentWrap `  
