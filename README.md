@@ -66,7 +66,7 @@ Also you can  use subscribe
 }
 ```
 
-## ## Installation
+## Installation
 
 RxURLNavigator officially supports CocoaPods only.
 
@@ -76,7 +76,7 @@ RxURLNavigator officially supports CocoaPods only.
 pod 'RxURLNavigator'
 ```
 
-## ## Example
+## Example
 
 You can find an example app [here](https://github.com/InsectQY/RxURLNavigator/tree/master/Example)
 
