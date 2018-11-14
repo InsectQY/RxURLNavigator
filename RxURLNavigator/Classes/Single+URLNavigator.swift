@@ -8,11 +8,12 @@
 
 import RxSwift
 import URLNavigator
+import RxCocoa
 
 public extension PrimitiveSequence where TraitType == SingleTrait {
     
     public func wrapPush(_ navigator: Navigator, _ url: URLConvertible, context: Any? = nil, from: UINavigationControllerType? = nil, animated: Bool = true) -> Single<URLNavigatorPushWrap> {
-        
+
         return flatMap({ _ -> Single<URLNavigatorPushWrap> in
             Single.just(URLNavigatorPushWrap(navigator, url, context: context, from: from, animated: animated))
         })
