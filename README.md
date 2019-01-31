@@ -25,7 +25,7 @@ let navigator = Navigator()
 
 ```swift
 tableView.rx.modelSelected(RouterType.self)
-.map({_ in URLNavigatorPushWrap(navigator, UserURL.login.path)})
+.map {_ in URLNavigatorPushWrap(navigator, UserURL.login.path)}
 ```
 
 Or 
@@ -52,7 +52,7 @@ Also you can  use subscribe
 
 ```swift
 tableView.rx.modelSelected(RouterType.self)
-.map({_ in URLNavigatorPresentWrap(navigator, UserURL.login.path, wrap: UINavigationController.self)})
+.map {_ in URLNavigatorPresentWrap(navigator, UserURL.login.path, wrap: UINavigationController.self)}
 ```
 
 Or 
