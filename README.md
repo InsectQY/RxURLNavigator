@@ -13,46 +13,38 @@ RxURLNavigator provides RxSwift extension for [URLNavigator](https://github.com/
 * Swift 4
 
 ## Getting Started
-If you want to push or present view controllers you should map to  `URLNavigatorPushWrap` or `URLNavigatorPresentWrap `  
-
 First create your  Navigator
 
 ```swift
 let navigator = Navigator()
 ```
 
-#### 1. URLNavigatorPushWrap
+#### 1. Use Subscribe
 
 ```swift
-tableView.rx.modelSelected(RouterType.self)
-.map {_ in URLNavigatorPushWrap(navigator, UserURL.login.path)}
+navigator.rx.push(UserURL.login.path)
+.subscribe { 
+    // your code
+}
 ```
 
 Or 
 
 ```swift 
-tableView.rx.modelSelected(RouterType.self)
-.wrapPush(navigator, UserURL.login.path)
-```
-
-Then you can bind it to your  `Navigator`
-```swift
-.bind(to: navigator.rx.push)
-```
-
-Also you can  use subscribe
-``` swift
-.push()
-.subscribe { _ in
-	
+navigator.rx.present(UserURL.login.path, wrap: UINavigationController.self)
+.subscribe { 
+    // your code
 }
 ```
 
-#### 2. URLNavigatorPresentWrap
+#### 2. Also you can use Binder
+
+If you want to use Binder,  you should map to  `URLNavigatorPushWrap` or `URLNavigatorPresentWrap `  
 
 ```swift
 tableView.rx.modelSelected(RouterType.self)
-.map {_ in URLNavigatorPresentWrap(navigator, UserURL.login.path, wrap: UINavigationController.self)}
+.wrapPush(navigator, UserURL.login.path)
+.bind(to: navigator.rx.push)
 ```
 
 Or 
@@ -60,19 +52,7 @@ Or
 ```swift 
 tableView.rx.modelSelected(RouterType.self)
 .wrapPresent(navigator, UserURL.login.path, wrap: UINavigationController.self)
-```
-
-Then you can bind it to your  `Navigator`
-```swift
 .bind(to: navigator.rx.present)
-```
-
-Also you can  use subscribe
-``` swift
-.present()
-.subscribe { _ in
-	
-}
 ```
 
 ## Installation

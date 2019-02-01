@@ -15,7 +15,7 @@ class HomeViewController: BaseViewController {
 
     private var disposeBag = DisposeBag()
     private let id = "cell"
-    
+
     // MARK: - Lazyload
     private lazy var tableView: UITableView = {
         
@@ -30,79 +30,46 @@ class HomeViewController: BaseViewController {
 
         view.addSubview(tableView)
         
-        let routerType: [RouterType] = [.pushMapBinder, .pushWrapBinder, .presentMapBinder, .presentWrapBinder, .pushMapSubscribe, .pushWrapSubscribe, .presentMapSubscribe, .presentWrapSubscribe]
+        let routerType: [RouterType] = [.pushWithBinder, .presentWithBinder, .pushWithSubscribe, .presentWithSubscribe]
         
         Observable.just(routerType)
         .bind(to: tableView.rx.items(cellIdentifier: id, cellType: UITableViewCell.self)) { (row, elememt, cell) in
             
             cell.textLabel?.text = elememt.rawValue
             cell.accessoryType = .disclosureIndicator
+            cell.selectionStyle = .none
         }.disposed(by: disposeBag)
-        
-        // Push With map
+
+        // Push With Subscribe
         tableView.rx.modelSelected(RouterType.self)
-        .filter({$0 == .pushMapBinder})
-        .map({_ in URLNavigatorPushWrap(navigator, UserURL.login.path)})
-        .bind(to: navigator.rx.push)
-        .disposed(by: disposeBag)
-        
-        // Push With wrap
+        .filter { $0 == .pushWithSubscribe }
+        .map { _ in navigator.rx.push(UserURL.login.path) }
+        .subscribe { _ in
+
+        }.disposed(by: disposeBag)
+
+        // Present With Subscribe
         tableView.rx.modelSelected(RouterType.self)
-        .filter({$0 == .pushWrapBinder})
+        .filter { $0 == .presentWithSubscribe }
+        .map { _ in navigator.rx.present(UserURL.login.path, wrap: UINavigationController.self) }
+        .subscribe { 
+            print($0)
+        }.disposed(by: disposeBag)
+
+        /// Also you can use Binder
+
+        //  Push With Binder
+        tableView.rx.modelSelected(RouterType.self)
+        .filter { $0 == .pushWithBinder }
         .wrapPush(navigator, UserURL.login.path)
         .bind(to: navigator.rx.push)
         .disposed(by: disposeBag)
         
-        // Present With map
+        // Present With Binder
         tableView.rx.modelSelected(RouterType.self)
-        .filter({$0 == .presentMapBinder})
-        .map({_ in URLNavigatorPresentWrap(navigator, UserURL.login.path, wrap: UINavigationController.self)})
-        .bind(to: navigator.rx.present)
-        .disposed(by: disposeBag)
-        
-        // Present With wrap
-        tableView.rx.modelSelected(RouterType.self)
-        .filter({$0 == .presentWrapBinder})
+        .filter { $0 == .presentWithBinder }
         .wrapPresent(navigator, UserURL.login.path, wrap: UINavigationController.self)
         .bind(to: navigator.rx.present)
         .disposed(by: disposeBag)
-        
-        // Also you can use subscribe
-        
-        // Push With map
-        tableView.rx.modelSelected(RouterType.self)
-        .filter({$0 == .pushMapSubscribe})
-        .map({_ in URLNavigatorPushWrap(navigator, UserURL.login.path)})
-        .push()
-        .subscribe { _ in
-            
-        }.disposed(by: disposeBag)
-        
-        // Push With wrap
-        tableView.rx.modelSelected(RouterType.self)
-        .filter({$0 == .pushWrapSubscribe})
-        .wrapPush(navigator, UserURL.login.path)
-        .push()
-        .subscribe { _ in
-            
-        }.disposed(by: disposeBag)
-        
-        // Present With map
-        tableView.rx.modelSelected(RouterType.self)
-        .filter({$0 == .presentMapSubscribe})
-        .map({_ in URLNavigatorPresentWrap(navigator, UserURL.login.path, wrap: UINavigationController.self)})
-        .present()
-        .subscribe { _ in
-            
-        }.disposed(by: disposeBag)
-        
-        // Present With wrap
-        tableView.rx.modelSelected(RouterType.self)
-        .filter({$0 == .presentWrapSubscribe})
-        .wrapPresent(navigator, UserURL.login.path, wrap: UINavigationController.self)
-        .present()
-        .subscribe { _ in
-            
-        }.disposed(by: disposeBag)
     }
 }

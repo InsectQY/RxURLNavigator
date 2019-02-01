@@ -10,19 +10,11 @@ import Foundation
 
 enum RouterType: String {
     
-    case pushMapBinder = "Push With map + Binder"
+    case pushWithBinder
     
-    case pushWrapBinder = "Push With wrap + Binder"
+    case presentWithBinder
     
-    case presentMapBinder = "Present With map + Binder"
+    case pushWithSubscribe
     
-    case presentWrapBinder = "Present With wrap + Binder"
-    
-    case pushMapSubscribe = "Push With map + Subscribe"
-    
-    case pushWrapSubscribe = "Push With wrap + Subscribe"
-    
-    case presentMapSubscribe = "Present With map + Subscribe"
-    
-    case presentWrapSubscribe = "Present With wrap + Subscribe"
+    case presentWithSubscribe 
 }

@@ -25,24 +25,3 @@ public extension SharedSequence where SharingStrategy == DriverSharingStrategy {
         })
     }
 }
-
-extension SharedSequence where SharingStrategy == DriverSharingStrategy, E: URLNavigatorPushWrap {
-    
-    public func push() -> Driver<UIViewController?> {
-        
-        return flatMap({
-            Driver.just($0.navigator.push($0.url, context: $0.context, from: $0.from, animated: $0.animated))
-        })
-    }
-}
-
-extension SharedSequence where SharingStrategy == DriverSharingStrategy, E: URLNavigatorPresentWrap {
-    
-    public func present() -> Driver<UIViewController?> {
-        
-        return flatMap({
-            
-            Driver.just($0.navigator.present($0.url, context: $0.context, wrap: $0.wrap, from: $0.from, animated: $0.animated, completion: $0.completion))
-        })
-    }
-}

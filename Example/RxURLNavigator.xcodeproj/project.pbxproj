@@ -232,10 +232,12 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = W2W4C384BP;
 						LastSwiftMigration = 1010;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = W2W4C384BP;
 						LastSwiftMigration = 1010;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -507,6 +509,7 @@
 			baseConfigurationReference = 744C2D6B223C90ABA461CEED /* Pods-RxURLNavigator_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = W2W4C384BP;
 				INFOPLIST_FILE = RxURLNavigator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -521,6 +524,7 @@
 			baseConfigurationReference = 42BCFEC35546EFDC4CFD278C /* Pods-RxURLNavigator_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = W2W4C384BP;
 				INFOPLIST_FILE = RxURLNavigator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -534,6 +538,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1A7E575B820BFEBEA9008888 /* Pods-RxURLNavigator_Tests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = W2W4C384BP;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -556,6 +561,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CE3E0F816DE48DDCD1CD5DCC /* Pods-RxURLNavigator_Tests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = W2W4C384BP;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",

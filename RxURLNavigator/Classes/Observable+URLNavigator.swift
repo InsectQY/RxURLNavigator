@@ -25,24 +25,3 @@ public extension ObservableType {
         })
     }
 }
-
-extension ObservableType where E: URLNavigatorPushWrap {
-    
-    public func push() -> Observable<UIViewController?> {
-        
-        return flatMap({
-            Observable.just($0.navigator.push($0.url, context: $0.context, from: $0.from, animated: $0.animated))
-        })
-    }
-}
-
-extension ObservableType where E: URLNavigatorPresentWrap {
-    
-    public func present() -> Observable<UIViewController?> {
-        
-        return flatMap({
-            
-            Observable.just($0.navigator.present($0.url, context: $0.context, wrap: $0.wrap, from: $0.from, animated: $0.animated, completion: $0.completion))
-        })
-    }
-}

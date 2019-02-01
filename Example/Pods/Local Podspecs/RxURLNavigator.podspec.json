@@ -1,6 +1,6 @@
 {
   "name": "RxURLNavigator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "summary": "RxSwift Extension For URLNavigator",
   "description": "RxSwift Extension For URLNavigator(Elegant URL Routing for Swift)",
   "homepage": "https://github.com/InsectQY/RxURLNavigator",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/InsectQY/RxURLNavigator.git",
-    "tag": "1.0.0"
+    "tag": "1.0.1"
   },
   "platforms": {
     "ios": "8.0"

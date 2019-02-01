@@ -26,26 +26,3 @@ public extension PrimitiveSequence where TraitType == SingleTrait {
         })
     }
 }
-
-extension PrimitiveSequence where TraitType == SingleTrait, E: URLNavigatorPushWrap {
-    
-    public func push() -> Single<UIViewController?> {
-        
-        return flatMap({
-            Single.just($0.navigator.push($0.url, context: $0.context, from: $0.from, animated: $0.animated))
-        })
-    }
-}
-
-extension PrimitiveSequence where TraitType == SingleTrait, E: URLNavigatorPresentWrap {
-    
-    public func present() -> Single<UIViewController?> {
-        
-        return flatMap({
-            
-            Single.just($0.navigator.present($0.url, context: $0.context, wrap: $0.wrap, from: $0.from, animated: $0.animated, completion: $0.completion))
-        })
-    }
-}
-
-

@@ -2,7 +2,7 @@ PODS:
   - RxCocoa (4.3.1):
     - RxSwift (~> 4.0)
   - RxSwift (4.3.1)
-  - RxURLNavigator (1.0.0):
+  - RxURLNavigator (1.0.1):
     - RxCocoa
     - RxSwift
     - URLNavigator
@@ -24,7 +24,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   RxCocoa: 78763c7b07d02455598d9fc3c1ad091a28b73635
   RxSwift: fe0fd770a43acdb7d0a53da411c9b892e69bb6e4
-  RxURLNavigator: 233c0ed50598fcec6bed3c9027651dae57a2b403
+  RxURLNavigator: 4bd4503bf82c3a96e7bf916c13d6385d9400c1f7
   URLNavigator: e8cea3835b3456d7876eb728831e742273c8d209
 
 PODFILE CHECKSUM: a072fbc9c5993c718075e3815226b3708e917af9
