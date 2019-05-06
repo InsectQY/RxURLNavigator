@@ -17,7 +17,7 @@ RxSwift Extension For URLNavigator(Elegant URL Routing for Swift)
 
   s.source_files = 'RxURLNavigator/Classes/**'
   s.dependency 'URLNavigator'
-  s.dependency 'RxSwift'
-  s.dependency 'RxCocoa'
+  s.dependency 'RxSwift', '~> 5.0'
+  s.dependency 'RxCocoa', '~> 5.0'
   
 end
