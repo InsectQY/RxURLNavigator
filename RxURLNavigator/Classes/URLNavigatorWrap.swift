@@ -15,7 +15,10 @@ public class URLNavigatorWrap {
     let context: Any?
     let animated: Bool
     
-    public init(_ navigator: Navigator, _ url: URLConvertible, context: Any? = nil, animated: Bool = true) {
+    public init(_ navigator: Navigator,
+                _ url: URLConvertible,
+                context: Any? = nil,
+                animated: Bool = true) {
         
         self.navigator = navigator
         self.url = url
@@ -28,10 +31,18 @@ public class URLNavigatorPushWrap: URLNavigatorWrap {
     
     let from: UINavigationControllerType?
     
-    public init(_ navigator: Navigator, _ url: URLConvertible, context: Any? = nil, wrap: UINavigationController.Type? = nil, from: UINavigationControllerType? = nil, animated: Bool = true) {
+    public init(_ navigator: Navigator,
+                _ url: URLConvertible,
+                context: Any? = nil,
+                wrap: UINavigationController.Type? = nil,
+                from: UINavigationControllerType? = nil,
+                animated: Bool = true) {
         
         self.from = from
-        super.init(navigator, url, context: context, animated: animated)
+        super.init(navigator,
+                   url,
+                   context: context,
+                   animated: animated)
     }
 }
 
@@ -41,12 +52,20 @@ public class URLNavigatorPresentWrap: URLNavigatorWrap {
     let from: UIViewControllerType?
     let completion: (() -> ())?
     
-    public init(_ navigator: Navigator, _ url: URLConvertible, context: Any? = nil, wrap: UINavigationController.Type? = nil, from: UIViewControllerType? = nil, animated: Bool = true, completion: (() -> ())? = nil) {
+    public init(_ navigator: Navigator,
+                _ url: URLConvertible,
+                context: Any? = nil,
+                wrap: UINavigationController.Type? = nil,
+                from: UIViewControllerType? = nil,
+                animated: Bool = true,
+                completion: (() -> ())? = nil) {
         
         self.wrap = wrap
         self.from = from
         self.completion = completion
-        super.init(navigator, url, context: context, animated: animated)
+        super.init(navigator, url,
+                   context: context,
+                   animated: animated)
     }
 }
 

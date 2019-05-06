@@ -13,17 +13,25 @@ import URLNavigator
 
 public extension Reactive where Base: Navigator {
     
-    public var push: Binder<URLNavigatorPushWrap> {
+    var push: Binder<URLNavigatorPushWrap> {
         
         return Binder(base) { navigator, wrap in
-            navigator.push(wrap.url, context: wrap.context, from: wrap.from, animated: wrap.animated)
+            navigator.push(wrap.url,
+                           context: wrap.context,
+                           from: wrap.from,
+                           animated: wrap.animated)
         }
     }
     
-    public var present: Binder<URLNavigatorPresentWrap> {
+    var present: Binder<URLNavigatorPresentWrap> {
         
         return Binder(base) { navigator, wrap in
-            navigator.present(wrap.url, context: wrap.context, wrap: wrap.wrap, from: wrap.from, animated: wrap.animated, completion: wrap.completion)
+            navigator.present(wrap.url,
+                              context: wrap.context,
+                              wrap: wrap.wrap,
+                              from: wrap.from,
+                              animated: wrap.animated,
+                              completion: wrap.completion)
         }
     }
 }

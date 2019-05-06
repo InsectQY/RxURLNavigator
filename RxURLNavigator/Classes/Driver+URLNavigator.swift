@@ -11,17 +11,35 @@ import RxCocoa
 
 public extension SharedSequence where SharingStrategy == DriverSharingStrategy {
     
-    public func wrapPush(_ navigator: Navigator, _ url: URLConvertible, context: Any? = nil, from: UINavigationControllerType? = nil, animated: Bool = true) -> Driver<URLNavigatorPushWrap> {
+    func wrapPush(_ navigator: Navigator,
+                  _ url: URLConvertible,
+                  context: Any? = nil,
+                  from: UINavigationControllerType? = nil,
+                  animated: Bool = true) -> Driver<URLNavigatorPushWrap> {
         
-        return flatMap({ _ -> Driver<URLNavigatorPushWrap> in
-            Driver.just(URLNavigatorPushWrap(navigator, url, context: context, from: from, animated: animated))
-        })
+        return flatMap { _ -> Driver<URLNavigatorPushWrap> in
+            Driver.just(URLNavigatorPushWrap(navigator,
+                                             url, context: context,
+                                             from: from,
+                                             animated: animated))
+        }
     }
     
-    public func wrapPresent(_ navigator: Navigator, _ url: URLConvertible, context: Any? = nil, wrap: UINavigationController.Type? = nil, from: UIViewControllerType? = nil, animated: Bool = true, completion: (() -> ())? = nil) -> Driver<URLNavigatorPresentWrap> {
+    func wrapPresent(_ navigator: Navigator,
+                     _ url: URLConvertible,
+                     context: Any? = nil,
+                     wrap: UINavigationController.Type? = nil,
+                     from: UIViewControllerType? = nil,
+                     animated: Bool = true,
+                     completion: (() -> ())? = nil) -> Driver<URLNavigatorPresentWrap> {
         
-        return flatMap({ _ -> Driver<URLNavigatorPresentWrap> in
-            Driver.just(URLNavigatorPresentWrap(navigator, url, context: context, wrap: wrap, from: from, animated: animated, completion: completion))
-        })
+        return flatMap { _ -> Driver<URLNavigatorPresentWrap> in
+            Driver.just(URLNavigatorPresentWrap(navigator,
+                                                url, context: context,
+                                                wrap: wrap,
+                                                from: from,
+                                                animated: animated,
+                                                completion: completion))
+        }
     }
 }

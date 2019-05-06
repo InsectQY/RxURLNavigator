@@ -12,7 +12,10 @@ import URLNavigator
 
 public extension Reactive where Base: Navigator {
 
-    public func push(_ url: URLConvertible, context: Any? = nil, from: UINavigationControllerType? = nil, animated: Bool = true) -> Observable<UIViewController?> {
+    func push(_ url: URLConvertible,
+              context: Any? = nil,
+              from: UINavigationControllerType? = nil,
+              animated: Bool = true) -> Observable<UIViewController?> {
 
             let vc = self.base.push(url,
                                     context: context,
@@ -21,7 +24,12 @@ public extension Reactive where Base: Navigator {
             return Observable<UIViewController?>.just(vc)
     }
 
-    public func present(_ url: URLConvertible, context: Any? = nil, wrap: UINavigationController.Type? = nil, from: UIViewControllerType? = nil, animated: Bool = true, completion: (() -> Void)? = nil) -> Observable<UIViewController?> {
+    func present(_ url: URLConvertible,
+                 context: Any? = nil,
+                 wrap: UINavigationController.Type? = nil,
+                 from: UIViewControllerType? = nil,
+                 animated: Bool = true,
+                 completion: (() -> Void)? = nil) -> Observable<UIViewController?> {
 
             let vc = self.base.present(url,
                                        context: context,

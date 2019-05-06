@@ -1,5 +1,5 @@
 # RxURLNavigator
-![Swift](https://img.shields.io/badge/Swift-4.2-orange.svg)
+![Swift](https://img.shields.io/badge/Swift-5.0-orange.svg)
 [![Version](https://img.shields.io/cocoapods/v/RxURLNavigator.svg?style=flat)](https://cocoapods.org/pods/RxURLNavigator)
 [![License](https://img.shields.io/cocoapods/l/RxURLNavigator.svg?style=flat)](https://cocoapods.org/pods/RxURLNavigator)
 [![Platform](https://img.shields.io/cocoapods/p/RxURLNavigator.svg?style=flat)](https://cocoapods.org/pods/RxURLNavigator)
@@ -10,7 +10,7 @@ RxURLNavigator provides RxSwift extension for [URLNavigator](https://github.com/
 ## Requirements
 
 * iOS 8.0+
-* Swift 4
+* Swift 5.0
 
 ## Getting Started
 First create your  Navigator
