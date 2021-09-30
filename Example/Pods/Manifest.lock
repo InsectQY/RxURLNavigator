@@ -1,21 +1,21 @@
 PODS:
-  - RxCocoa (5.0.0):
-    - RxRelay (~> 5)
-    - RxSwift (~> 5)
-  - RxRelay (5.0.0):
-    - RxSwift (~> 5)
-  - RxSwift (5.0.0)
-  - RxURLNavigator (2.0.0):
-    - RxCocoa
-    - RxSwift
+  - RxCocoa (6.2.0):
+    - RxRelay (= 6.2.0)
+    - RxSwift (= 6.2.0)
+  - RxRelay (6.2.0):
+    - RxSwift (= 6.2.0)
+  - RxSwift (6.2.0)
+  - RxURLNavigator (3.0.0):
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
     - URLNavigator
-  - URLNavigator (2.2.0)
+  - URLNavigator (2.3.0)
 
 DEPENDENCIES:
   - RxURLNavigator (from `../`)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - RxCocoa
     - RxRelay
     - RxSwift
@@ -26,12 +26,12 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
-  RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
-  RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
-  RxURLNavigator: ec8d34e3467394b014b4b37f0efae9137ec0ba70
-  URLNavigator: 0bffc3efdeb2d97f7b5eec7ac82d290f4a099431
+  RxCocoa: 4baf94bb35f2c0ab31bc0cb9f1900155f646ba42
+  RxRelay: e72dbfd157807478401ef1982e1c61c945c94b2f
+  RxSwift: d356ab7bee873611322f134c5f9ef379fa183d8f
+  RxURLNavigator: 31bf8ab1ae0bf497a4f85e42bf416c2f7365ceed
+  URLNavigator: 2593c0e2d293732ec5c44503cf54dceba1a68085
 
 PODFILE CHECKSUM: a072fbc9c5993c718075e3815226b3708e917af9
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.11.2

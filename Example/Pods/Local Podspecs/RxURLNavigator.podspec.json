@@ -1,6 +1,6 @@
 {
   "name": "RxURLNavigator",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "summary": "RxSwift Extension For URLNavigator",
   "description": "RxSwift Extension For URLNavigator(Elegant URL Routing for Swift)",
   "homepage": "https://github.com/InsectQY/RxURLNavigator",
@@ -13,22 +13,23 @@
   },
   "source": {
     "git": "https://github.com/InsectQY/RxURLNavigator.git",
-    "tag": "2.0.0"
+    "tag": "3.0.0"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "9.0"
   },
-  "swift_version": "5.0",
+  "swift_versions": "5.0",
   "source_files": "RxURLNavigator/Classes/**",
   "dependencies": {
     "URLNavigator": [
 
     ],
     "RxSwift": [
-
+      "~> 6.0"
     ],
     "RxCocoa": [
-
+      "~> 6.0"
     ]
-  }
+  },
+  "swift_version": "5.0"
 }

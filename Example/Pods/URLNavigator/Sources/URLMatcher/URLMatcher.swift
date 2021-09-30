@@ -51,14 +51,18 @@ open class URLMatcher {
     let scheme = url.urlValue?.scheme
     let stringPathComponents = self.stringPathComponents(from :url)
 
+    var results = [URLMatchResult]()
+    
     for candidate in candidates {
       guard scheme == candidate.urlValue?.scheme else { continue }
       if let result = self.match(stringPathComponents, with: candidate) {
-        return result
+        results.append(result)
       }
     }
 
-    return nil
+    return results.max {
+       self.numberOfPlainPathComponent(in: $0.pattern) < self.numberOfPlainPathComponent(in: $1.pattern)
+    }
   }
 
   func match(_ stringPathComponents: [String], with candidate: URLPattern) -> URLMatchResult? {
@@ -124,9 +128,14 @@ open class URLMatcher {
   }
 
   func stringPathComponents(from url: URLConvertible) -> [String] {
-    return url.urlStringValue.components(separatedBy: "/").lazy
-      .filter { !$0.isEmpty }
-      .filter { !$0.hasSuffix(":") }
+    return url.urlStringValue.components(separatedBy: "/").lazy.enumerated()
+      .filter { index, component in !component.isEmpty }
+      .filter { index, component in !self.isScheme(index, component) }
+      .map { index, component in component }
+  }
+
+  private func isScheme(_ index: Int, _ component: String) -> Bool {
+    return index == 0 && component.hasSuffix(":")
   }
 
   func pathComponents(from url: URLPattern) -> [URLPathComponent] {
@@ -156,5 +165,12 @@ open class URLMatcher {
         return .notMatches
       }
     }
+  }
+
+  private func numberOfPlainPathComponent(in pattern: URLPattern) -> Int {
+    return self.pathComponents(from: pattern).lazy.filter {
+      guard case .plain = $0 else { return false }
+      return true
+    }.count
   }
 }
